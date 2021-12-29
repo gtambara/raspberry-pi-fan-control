@@ -13,6 +13,9 @@ PWM_FREQ = 25000        # Frequencia do PWM em Hz
 GPIO.setup(FAN_PIN, GPIO.OUT, initial = GPIO.LOW)
 pwm = GPIO.PWM(FAN_PIN, PWM_FREQ)
 
+# Importante:
+# Alguns modelos de ventoinha mantém uma velocidade baixa mesmo sem sinal (FAN_OFF = 0), a conferir pelo datasheet
+
 FAN_OFF = 0
 FAN_LOW = 25
 FAN_MID = 50
