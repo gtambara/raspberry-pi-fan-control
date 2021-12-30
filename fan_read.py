@@ -8,15 +8,15 @@ import numpy as np
 GPIO.setmode(GPIO.BOARD)
 
 TACH_PIN = 36  		# Pino que recebe dados do tacometro no BCM 16 no Raspberry Pi
-PULSES = 2 			# Numero de pulsos por revolucao da ventoinha
+PULSES = 2 		# Numero de pulsos por revolucao da ventoinha
 PRECISION = 0.01 	# Precisao do tacometro
 SAMPLE_SPACE = 100 	# Numero de medicoes realizadas antes de apresenta-las
-TIME = 2			# Tempo entre loops, permitindo as coletas de dados
+TIME = 2		# Tempo entre loops, permitindo as coletas de dados
 
 GPIO.setup(TACH_PIN, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 t = time.time()
 
-# define rpm se nao estiver definido
+# Define rpm se nao estiver definido
 try: rpm
 except NameError: rpm = [0]
 
@@ -29,6 +29,8 @@ def fall(argument):
 		t = time.time()
 
 GPIO.add_event_detect(TACH_PIN, GPIO.FALLING, fall)
+
+# Rotina principal
 
 while True:
 	time.sleep(TIME)
