@@ -1,4 +1,4 @@
-# Programa responsavel por ler os dados obtidos pelo tacometro, inbutido nas ventoinhas utilizadas nos HSMs.
+# Programa responsavel por ler os dados obtidos pelo tacometro, inbutido nas ventoinhas.
 
 import RPi.GPIO as GPIO
 import time
